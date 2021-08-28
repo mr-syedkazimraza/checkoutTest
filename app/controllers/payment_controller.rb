@@ -41,23 +41,11 @@ class PaymentController < ApplicationController
         raise ""
       end
 
-      #if card number is wrong then set @validCard to false and set message 'Card declined'
-      #else if card number is right then set @validCard to true
-      #else set @validCard to false and set message of 'Card service not supported'
-      if cardNumber=="5560000000000001"
-        @message="Card declined"
-        validCard=false
-      elsif cardNumber=="5520000000000000"
-        validCard=true
-        @message=""
-      else
-        @message="Card service not supported"
-        validCard=false
-      end
+      #card validation
+      validCard,@message=PaymentHelper.cardValidator(cardNumber)
 
       #only if the card is valid we will strore the data
       if validCard==true
-
         #now lets mask the @cardNumber
         maskedCard=PaymentHelper.maskCard(cardNumber)
         newCard=CardDatum.new(cardNumber:maskedCard,description:description,email:email,address:address)

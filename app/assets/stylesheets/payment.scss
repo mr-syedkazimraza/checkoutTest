@@ -14,7 +14,7 @@ input{
   width: 45%;
   display: inline-block;
   text-align: right;
-  margin-right: 1%;
+  margin-right: 2%;
   margin-bottom: 1%;
 }
 
@@ -25,8 +25,10 @@ input{
 }
 
 .submit{
+  font-weight: bold;
   width: 15%;
-  margin-left: 50%
+  margin-left: 50%;
+  margin-bottom:2%
 }
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
