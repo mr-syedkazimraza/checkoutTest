@@ -23,6 +23,8 @@ gem 'bootstrap', '~> 5.1.0'
 gem 'sprockets-rails'
 
 gem 'jquery-rails'
+
+gem 'rails_12factor'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
