@@ -1,0 +1,32 @@
+.payment-form {
+  margin-top: 2%;
+}
+
+label{
+  width: 30%;
+}
+
+input{
+  width: 30%;
+}
+
+.label{
+  width: 45%;
+  display: inline-block;
+  text-align: right;
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+
+.input{
+  width: 45%;
+  display: inline-block;
+  text-align:left;
+}
+
+.submit{
+  width: 15%;
+  margin-left: 50%
+}
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
