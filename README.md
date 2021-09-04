@@ -14,9 +14,9 @@ The dependencies are specified in the Gemfile which is located in the root folde
 	- the username and password for the postgres database is to be changed in config/database.yml file. The current username and password for my setup were postgres. Change it to your username and password which you set up while installing postgres
 	- run the following command to install the missing gems. You don't need to adjust the gem file as it contains the necessary configuration set up already
 	**bundle install**
-	--after installing necessary gems, run the following command to create the database
+	-after installing necessary gems, run the following command to create the database
 	**rake db:create**
-	-- if you get no errors then run the following command and after running the command go to the link (http://localhost:3000) to use the app
+	- if you get no errors then run the following command and after running the command go to the link (http://localhost:3000) to use the app
 	**rails server**
 
 * Database creation
