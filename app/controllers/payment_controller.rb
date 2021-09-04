@@ -1,57 +1,34 @@
 require 'payment_helper.rb'
 
+#Purpose: This is the payment controller which is used for taking card payment from the user.
 class PaymentController < ApplicationController
+
+  #index action
   def index
   end
 
-  #Purpose: This method is used by payment controller method for accepting new card payments
+  #Purpose: This action of the controller is to show the user new form for the card payment.
   def new
-    @error=false
-    @message=""
-    validCard=false
-    cardNumber=params[:cardNumber]
-    description=params[:description]
-    email=params[:email]
-    address=params[:address]
+    @payment=CardDatum.new
+  end
+
+
+  #Purpose: This action of the controller is to accept the submitted form from the user and display response to the user after user submits the form.
+  def create
 
     begin
-      #check if card number is missing then set message
-      if cardNumber==''
-          @message="Card number is missing."
+      @error=false
+      @issue=""
+
+      #initialize CardDatumService
+      cardService=CardDatumService.new(card_params)
+      #validate card data
+      @payment=cardService.validate
+      if @payment.errors.size>0
+        raise "invalid card data"
       end
-
-      #check if email is missing then set message
-      if email==''
-        @message+="Email address is missing."
-      end
-
-      #check if address is missing then set message
-      if address==''
-        @message+="Address is missing."
-      end
-
-      #check if any of the mandorty fields are missing then raise error
-      if cardNumber=='' || email=='' || address==''
-        raise ""
-      end
-
-      #if card number is not string then raise error and set message
-      if cardNumber.match?(/\A\d+\z/) ==false
-        @message+="Card number can not contain alphbetics.Please insert a valid card number."
-        raise ""
-      end
-
-      #card validation
-      validCard,@message=PaymentHelper.cardValidator(cardNumber)
-
-      #only if the card is valid we will strore the data
-      if validCard==true
-        #now lets mask the @cardNumber
-        maskedCard=PaymentHelper.maskCard(cardNumber)
-        newCard=CardDatum.new(cardNumber:maskedCard,description:description,email:email,address:address)
-        newCard.save
-      end
-
+      #save card data
+      @validCard,@issue,@guide_message=cardService.saveData
     rescue
       @error=true
     end
@@ -60,12 +37,19 @@ class PaymentController < ApplicationController
     #else if validCard is false then return error template with error message
     #else return new templte which shows that payment was processed
     if @error==true
-      render :index
-    elsif validCard==false
-      render :error
-    else
       render :new
+    elsif @validCard==false
+      render :cardNotAccepted
+    else
+      render :cardAccepted
     end
 
   end
+
+
+  #Purpose: This private method is used for strong paramters.
+  private
+    def card_params
+      params.require(:card_datum).permit(:description,:cardNumber,:email,:address)
+    end
 end

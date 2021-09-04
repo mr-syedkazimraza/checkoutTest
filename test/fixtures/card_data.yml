@@ -1,13 +1,43 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  cardNumber: MyString
-  email: MyString
-  address: MyString
-  description: MyString
+valid_card_data:
+  cardNumber: "5560000000000001"
+  email: "one@gmail.com"
+  address: "4 maze road, Freo, WA 6543"
+  description: "This is the description for the test one"
 
-two:
-  cardNumber: MyString
-  email: MyString
-  address: MyString
-  description: MyString
+invalid_without_email:
+  cardNumber: "5560000000000009"
+  email:
+  address: "4 maze road, Freo, WA 6543"
+  description: "this is the description for the test two"
+
+invalid_without_address:
+  cardNumber: "5560000000000001"
+  email: "one@gmail.com"
+  address:
+  description: "This is the description for the test one"
+
+invalid_without_card_number:
+  cardNumber:
+  email: "one@gmail.com"
+  address: "4 maze road, Freo, WA 6543"
+  description: "This is the description for the test one"
+
+card_data_length_too_short:
+  cardNumber: "5560000000001"
+  email: "one@gmail.com"
+  address: "4 maze road, Freo, WA 6543"
+  description: "This is the description for the test one"
+
+email_address_length_too_long:
+  cardNumber: "5560000000000001"
+  email: "ThisEmailAddressIsTooLongSoItShouldNotSaveData@gmail.com"
+  address: "4 maze road, Freo, WA 6543"
+  description: "This is the description for the test one"
+
+address_length_too_short:
+  cardNumber: "5560000000000001"
+  email: "one@gmail.com"
+  address: "4 maze road"
+  description: "This is the description for the test one"

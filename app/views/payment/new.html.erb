@@ -1,8 +1,61 @@
+
+
+
 <div class="payment-form">
 
-  <div class="alert alert-success" role="alert">
-    <h2><span class="badge bg-secondary">Payment Processed</span></h2>
+  <div class="alert alert-primary" role="alert">
+    Please insert payment details. Fields with asterisk (*) are mandatory
   </div>
+
   <br/>
 
+
+
+  <%= form_with model: @payment do |form| %>
+    <div class="label">
+      <%= form.label :cardNumber,"Card Number(*):" %>
+    </div>
+    <div class="input-box">
+      <%= form.text_field :cardNumber %>
+      <% @payment.errors.full_messages_for(:cardNumber).each do |message| %>
+        <div class="error"><%= message %></div>
+      <% end %>
+    </div>
+    <br>
+
+
+    <div class="label">
+      <%= form.label :email, "Email(*):" %>
+    </div>
+    <div class="input-box">
+      <%= form.email_field :email%>
+      <% @payment.errors.full_messages_for(:email).each do |message| %>
+        <div class="error"><%= message %></div>
+      <% end %>
+    </div>
+    <br>
+    <div class="label">
+      <%= form.label :address,"Address(*):" %>
+    </div>
+    <div class="input-box">
+      <%= form.text_field :address %>
+      <% @payment.errors.full_messages_for(:address).each do |message| %>
+        <div class="error"><%= message %></div>
+      <% end %>
+    </div>
+    <br>
+    <div class="label">
+      <%= form.label :description,"Description(*):" %>
+    </div>
+    <div class="input-box">
+      <%= form.text_area :description %>
+      <% @payment.errors.full_messages_for(:description).each do |message| %>
+        <div class="error"><%= message %></div>
+      <% end %>
+    </div>
+    <br>
+    <div class="submit">
+      <%= form.submit "Submit"%>
+    </div>
+  <% end %>
 </div>
