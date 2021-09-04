@@ -17,9 +17,9 @@ The dependencies are specified in the Gemfile which is located in the root folde
 	bundle install
 	'''
 	- after installing necessary gems, run the following command to create the database 
-	'''
-	rake db:create
-	'''
+'''
+rake db:create
+'''
 	- if you get no errors then run the following command and after running the command go to the link (http://localhost:3000) to use the app 
 	'''
 	rails server
