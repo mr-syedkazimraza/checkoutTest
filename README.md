@@ -29,14 +29,14 @@
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-	- The deployement instructions have been followed from this link (https://devcenter.heroku.com/articles/getting-started-with-rails4). 
+	- The deployment instructions have been followed from this link (https://devcenter.heroku.com/articles/getting-started-with-rails4). 
 	- while deploying on heroku, the tutorial in the link provided uses master branch but as we know git is moving towards main branch and my application has main branch as well. So you will get error when you run this command ***git push heroku master*** after creating app on heroku.
 
 ## How to use the app
 
 * Click on this link (https://hidden-caverns-80044.herokuapp.com/) to open the live version of the app deployed on heroku.
 * You will see a form with card number, email, address and description fields.
-* Its necessary to type in card number,email and address before sumbitting the form.
+* Its necessary to type in card number,email and address before submitting the form.
 * The length of card number should be 16. The maximum length of email is 40 characters. The minimum length for address is 15 and maximum is 50. The maximum length for description is 50 characters.
 * The field length have been set by me so that user does not enter whatever he/she wants.
 * Typing 5560000000000001 card number will result in card declined and you will see card declined message only if the email and address is also entered otherwise form will turn the missing fields into red from black and you will not be able to submit the form.
@@ -46,7 +46,7 @@
 ## Issues
 * Because the description field is not necessary, It should not have asterisk on it in the html form.
 
-## Some usefull links I used while developing this application.
+## Some useful links I used while developing this application.
 	- https://guides.railsgirls.com/install#setup-for-windows (Installing all ruby, rails,git and node.js)
 	- https://guides.rubyonrails.org/getting_started.html (Getting started)
 	- https://devcenter.heroku.com/articles/getting-started-with-rails4 (Deploying on heroku)
