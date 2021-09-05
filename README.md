@@ -8,7 +8,7 @@
 * System dependencies
 	- The dependencies are specified in the Gemfile which is located in the root folder of the application.
 
-* Configuration and setup
+* Configuration and setup (local)
 	- As I setup everything on windows 10 OS so install the rails from the following link (https://guides.railsgirls.com/install#setup-for-windows) and follow instructions to install ruby, git,node.js,yarn and rails. Please install ruby 2.6.5 with Devkit for 32 bit. I had trouble installing 64 bit ruby.
 	- After following all instructions from the last step, install postgres for windows
 	- Create a folder and clone this repository by running this command from cmd ***git clone https://github.com/mr-syedkazimraza/checkoutTest.git***
@@ -23,13 +23,22 @@
 * Database initialization
 
 * How to run the test suite
-The tests have only been written for models yet. I don't have time to write tests for controllers as the tasks done by me should be able to convey the message that I am able to understand the frameworks and write code using the standards defined by the community but I need more time to learn rails.
-	-Run this command ***rails test test/models/card_datum_test.rb*** from the root folder of the app to run the card model tests 
+	- The tests have only been written for models yet. I don't have time to write tests for controllers as the tasks done by me should be able to convey the message that I am able to understand the frameworks and write code using the standards defined by the community but I need more time to learn rails.
+	- Run this command ***rails test test/models/card_datum_test.rb*** from the root folder of the app to run the card model tests 
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-The deployement instructions have been followed from this link (https://devcenter.heroku.com/articles/getting-started-with-rails4). 
+	- The deployement instructions have been followed from this link (https://devcenter.heroku.com/articles/getting-started-with-rails4). 
+	- while deploying on heroku, the tutorial in the link provided uses master branch but as we know git is moving towards main branch and my application has main branch as well. So you will get error when you run this command ***git push heroku master*** after creating app on heroku.
 
 ###How to use
 
+	- Go this link (https://hidden-caverns-80044.herokuapp.com/) to open the live version of the app.
+	- You will see a form with card number, email, address and description fields.
+	- Its necessary to type in card number,email and address before sumbitting the form.
+	- The length of card number should be 16. The maximum length of email is 40 characters. The minimum length for address is 15 and maximum is 50. The maximum length for description is 50 characters.
+	- The field length have been set by me so that user does not enter whatever he/she wants.
+	- Typing 5560000000000001 card number will result in card declined and you will see card declined message only if the email and address is also entered otherwise form will turn the missing fields into red from black and you will not be able to submit the form.
+	- Typing 5520000000000000 card number will result in card accepted and you will see card accepted message.
+	- Typing any other card number with the length of 16 will show the message of 'Something went wrong'.
