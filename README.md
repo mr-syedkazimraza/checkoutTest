@@ -34,11 +34,11 @@
 
 ### How to use
 
-	- Go this link (https://hidden-caverns-80044.herokuapp.com/) to open the live version of the app.
-	- You will see a form with card number, email, address and description fields.
-	- Its necessary to type in card number,email and address before sumbitting the form.
-	- The length of card number should be 16. The maximum length of email is 40 characters. The minimum length for address is 15 and maximum is 50. The maximum length for description is 50 characters.
-	- The field length have been set by me so that user does not enter whatever he/she wants.
-	- Typing 5560000000000001 card number will result in card declined and you will see card declined message only if the email and address is also entered otherwise form will turn the missing fields into red from black and you will not be able to submit the form.
-	- Typing 5520000000000000 card number will result in card accepted and you will see card accepted message.
-	- Typing any other card number with the length of 16 will show the message of 'Something went wrong'.
+	1 - Go this link (https://hidden-caverns-80044.herokuapp.com/) to open the live version of the app.
+	2 - You will see a form with card number, email, address and description fields.
+	3 - Its necessary to type in card number,email and address before sumbitting the form.
+	4 - The length of card number should be 16. The maximum length of email is 40 characters. The minimum length for address is 15 and maximum is 50. The maximum length for description is 50 characters.
+	5 - The field length have been set by me so that user does not enter whatever he/she wants.
+	6 - Typing 5560000000000001 card number will result in card declined and you will see card declined message only if the email and address is also entered otherwise form will turn the missing fields into red from black and you will not be able to submit the form.
+	7 - Typing 5520000000000000 card number will result in card accepted and you will see card accepted message.
+	8 - Typing any other card number with the length of 16 will show the message of 'Something went wrong'.
