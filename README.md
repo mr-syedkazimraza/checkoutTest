@@ -43,6 +43,9 @@
 * Typing 5520000000000000 card number will result in card accepted and you will see card accepted message.
 * Typing any other card number with the length of 16 will show the message of 'Something went wrong'.
 
+## Issues
+* Because the description field is not necessary, It should not have asterisk on it in the html form.
+
 ## Some usefull links I used while developing this application.
 	- https://guides.railsgirls.com/install#setup-for-windows (Installing all ruby, rails,git and node.js)
 	- https://guides.rubyonrails.org/getting_started.html (Getting started)
