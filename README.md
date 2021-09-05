@@ -32,7 +32,7 @@
 	- The deployement instructions have been followed from this link (https://devcenter.heroku.com/articles/getting-started-with-rails4). 
 	- while deploying on heroku, the tutorial in the link provided uses master branch but as we know git is moving towards main branch and my application has main branch as well. So you will get error when you run this command ***git push heroku master*** after creating app on heroku.
 
-###How to use
+### How to use
 
 	- Go this link (https://hidden-caverns-80044.herokuapp.com/) to open the live version of the app.
 	- You will see a form with card number, email, address and description fields.
