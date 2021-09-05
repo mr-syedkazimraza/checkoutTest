@@ -35,6 +35,7 @@
 ## How to use the app
 
 * Click on this link (https://hidden-caverns-80044.herokuapp.com/) to open the live version of the app deployed on heroku.
+* Click on 'Make a payment' link
 * You will see a form with card number, email, address and description fields.
 * Its necessary to type in card number,email and address before submitting the form.
 * The length of card number should be 16. The maximum length of email is 40 characters. The minimum length for address is 15 and maximum is 50. The maximum length for description is 50 characters.
@@ -47,7 +48,7 @@
 * Because the description field is not necessary, It should not have asterisk on it in the html form.
 
 ## Some useful links I used while developing this application.
-	- https://guides.railsgirls.com/install#setup-for-windows (Installing all ruby, rails,git and node.js)
+	- https://guides.railsgirls.com/install#setup-for-windows (Installing ruby, rails,git and node.js)
 	- https://guides.rubyonrails.org/getting_started.html (Getting started)
 	- https://devcenter.heroku.com/articles/getting-started-with-rails4 (Deploying on heroku)
 	- https://edgeguides.rubyonrails.org/action_controller_overview.html (Strong parameters)
